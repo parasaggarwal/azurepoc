@@ -3,7 +3,7 @@
   <link href="bootstrap.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
-
+<body ng-app="myApp" ng-controller="myCtrl">
 <script>
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope, $http) {
@@ -27,7 +27,7 @@ $http({
 
 
 </script>
-<body ng-app="myApp" ng-controller="myCtrl">
+
 <div >
 
 <h3>Users List</h3> 
