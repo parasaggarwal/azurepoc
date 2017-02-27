@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html> 
+  <link href="bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+ 
+$http({
+  method: 'GET',
+  url: 'http://localhost:8010/SpringBootRestDemo/get-user-list'
+   
+}).then(function successCallback(response) { 
+	 console.log(response);
+	 $scope.users = response.data;
+	 
+	 $scope.users1 = "A";
+  }, function errorCallback(response) { 
+       alert("error");
+       console.log(response);
+  }); 
+  
+});
+
+
+</script>
+<div >
+
+<h3>Users List</h3> 
+ 
+
+
+<table class = "table">
+     
+   <thead>
+      <tr>
+         <th>First Name</th>
+         <th>Last Name</th>
+		 <th>City</th>
+         <th>country</th>
+		 <th>Option</th>
+      </tr>
+   </thead>
+   
+   <tbody>
+      <tr ng-repeat="user in users">     
+		<td>{{ user.firstname }}</td>
+		<td>{{ user.lastname }}</td>
+		<td>{{ user.coutnryname }}</td>
+		<td>{{ user.city }}</td>
+		<td><button type = "button" class = "btn btn-primary">Edit</button></td>
+	  </tr>
+   </tbody>
+	
+</table>
+
+
+ 
+</div>
+ 
+
+
+
+</body>
+</html>
