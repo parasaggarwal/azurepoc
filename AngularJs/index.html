@@ -11,8 +11,7 @@ app.controller('myCtrl', function($scope, $http) {
  
 $http({
   method: 'GET',
-  url: 'http://parasaggarwal.azurewebsites.net/SpringBootRestDemo/get-user-list',
-	Access-Control-Allow-Credentials: true
+  url: 'http://parasaggarwal.azurewebsites.net/SpringBootRestDemo/get-user-list'
    
 }).then(function successCallback(response) { 
 	 console.log(response);
