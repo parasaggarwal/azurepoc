@@ -13,7 +13,6 @@ $http({
   url: 'http://parasaggarwal.azurewebsites.net/SpringBootRestDemo/get-user-list'
    
 }).then(function successCallback(response) { 
-	 alert("suceess");
 	 console.log(response);
 	 $scope.users = response.data;
 	 
