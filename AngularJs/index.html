@@ -2,23 +2,25 @@
 <html> 
   <link href="bootstrap.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-
 <body ng-app="myApp" ng-controller="myCtrl">
+
+
 <script>
 var app = angular.module('myApp', []);
+alert('test');
 app.controller('myCtrl', function($scope, $http) {
- 
+ alert('i am inside');
 $http({
   method: 'GET',
   url: 'http://parasaggarwal.azurewebsites.net/SpringBootRestDemo/get-user-list'
-   
 }).then(function successCallback(response) { 
+alert(response.data);
 	 console.log(response);
 	 $scope.users = response.data;
 	 
 	 $scope.users1 = "A";
   }, function errorCallback(response) { 
-       alert("error");
+       alert(response.data);
        console.log(response);
   }); 
   
@@ -26,7 +28,6 @@ $http({
 
 
 </script>
-
 <div >
 
 <h3>Users List</h3> 
