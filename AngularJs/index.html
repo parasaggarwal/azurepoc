@@ -12,7 +12,9 @@ app.controller('myCtrl', function($scope, $http) {
  alert('i am inside');
 $http({
   method: 'GET',
-  url: 'http://parasaggarwal.azurewebsites.net/SpringBootRestDemo/get-user-list'
+  url: 'http://parasaggarwal.azurewebsites.net/SpringBootRestDemo/get-user-list',
+	headers:{
+                'Access-Control-Allow-Origin': '*'}
 }).then(function successCallback(response) { 
 alert(response.data);
 	 console.log(response);
